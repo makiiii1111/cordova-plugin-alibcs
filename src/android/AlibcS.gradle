@@ -1,0 +1,39 @@
+def minSdkVersion = 15
+
+if(cdvMinSdkVersion == null) {
+    ext.cdvMinSdkVersion = minSdkVersion;
+} else if (cdvMinSdkVersion.toInteger() < minSdkVersion) {
+    ext.cdvMinSdkVersion = minSdkVersion;
+}
+
+repositories{
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23+'
+    compile(name:'alibc_trade_biz-3.1.1.209', ext:'aar')
+    compile(name:'alibc_trade_common-3.1.1.209', ext:'aar')
+    compile(name:'alibc_trade_sdk-3.1.1.209', ext:'aar')
+    compile(name:'securityguardaar3-5.1.81', ext:'aar')
+    compile(name:'alibc_link_partner-1.1.0.6', ext: 'aar')
+    compile(name:'alibabauth_ui-1.4.3', ext: 'aar')
+    compile(name:'tuniontradesdk-0.3.2', ext: 'aar')
+    compile(name: 'securitybodyaar3-5.1.25', ext: 'aar')
+    compile files('libs/alibabauth_core-1.4.3.jar')
+    compile files ('libs/fastjson-1.2.9.jar')
+    compile files ('libs/alibabauth_ext-1.4.3.jar')
+    compile files('libs/app-monitor-sdk-2.5.1.3_for_bc_proguard.jar')
+    compile files('libs/mtopsdk_allinone_open-1.2.2.4.jar')
+    compile files('libs/utdid4all-1.1.5.3_proguard.jar')
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}

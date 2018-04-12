@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-alibcs" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AlibcS</name>
+    <preference name="PID"/>
+    <preference name="APPKEY"/>
+    <js-module name="AlibcS" src="www/AlibcS.js">
+        <clobbers target="alibcS" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AlibcS">
+                <param name="android-package" value="topo.alibcs.AlibcS" />
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="PID" value="$PID"/>
+            <preference name="APPKEY" value="$APPKEY"/>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+        </config-file>
+        <source-file src="src/android/AlibcS.java" target-dir="src/topo/alibcs" />
+        <framework src="src/android/AlibcS.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="src/android/drawable/yw_1222.jpg" target="res/drawable/yw_1222.jpg"/>
+        <resource-file src="src/android/libs/alibc_trade_biz-3.1.1.209.aar" target="libs/alibc_trade_biz-3.1.1.209.aar" />
+        <resource-file src="src/android/libs/alibc_trade_common-3.1.1.209.aar" target="libs/alibc_trade_common-3.1.1.209.aar" />
+        <resource-file src="src/android/libs/alibc_trade_sdk-3.1.1.209.aar" target="libs/alibc_trade_sdk-3.1.1.209.aar" />
+        <resource-file src="src/android/libs/alibabauth_core-1.4.3.jar" target="libs/alibabauth_core-1.4.3.jar" />
+        <resource-file src="src/android/libs/alibabauth_ext-1.4.3.jar" target="libs/alibabauth_ext-1.4.3.jar" />
+        <resource-file src="src/android/libs/alibabauth_ui-1.4.3.aar" target="libs/alibabauth_ui-1.4.3.aar" />
+        <resource-file src="src/android/libs/app-monitor-sdk-2.5.1.3_for_bc_proguard.jar" target="libs/app-monitor-sdk-2.5.1.3_for_bc_proguard.jar" />
+        <resource-file src="src/android/libs/mtopsdk_allinone_open-1.2.2.4.jar" target="libs/mtopsdk_allinone_open-1.2.2.4.jar" />
+        <resource-file src="src/android/libs/securityguardaar3-5.1.81.aar" target="libs/securityguardaar3-5.1.81.aar" />
+        <resource-file src="src/android/libs/utdid4all-1.1.5.3_proguard.jar" target="libs/utdid4all-1.1.5.3_proguard.jar" />
+        <resource-file src="src/android/libs/alibc_link_partner-1.1.0.6.aar" target="libs/alibc_link_partner-1.1.0.6.aar" />
+        <resource-file src="src/android/libs/tuniontradesdk-0.3.2.aar" target="libs/tuniontradesdk-0.3.2.aar" />
+        <resource-file src="src/android/libs/fastjson-1.2.9.jar" target="libs/fastjson-1.2.9.jar" />
+        <resource-file src="src/android/libs/securitybodyaar3-5.1.25.aar" target="libs/securitybodyaar3-5.1.25.aar" />
+        <resource-file src="src/android/proguard-rules.pro" target="proguard-rules.pro"/>
+    </platform>
+</plugin>

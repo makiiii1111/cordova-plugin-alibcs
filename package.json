@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-alibcs",
+  "version": "1.0.0",
+  "description": "a plugin integrated AlibcSDK\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "cordova": {
+    "id": "cordova-plugin-alibcs",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/makiiii1111/cordova-plugin-alibcs.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "makiiii1111",
+  "license": "\u001b[A\u001b[D\u001b[D\u001b[D\u001b[makiiii1111\u001b[B",
+  "bugs": {
+    "url": "https://github.com/makiiii1111/cordova-plugin-alibcs/issues"
+  },
+  "homepage": "https://github.com/makiiii1111/cordova-plugin-alibcs#readme"
+}
