@@ -50,9 +50,6 @@ public class AlibcS extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView){
         super.initialize(cordova, webView);
-        if(!cordova.hasPermission(Manifest.permission.READ_PHONE_STATE)){
-            this.cordova.requestPermission(this, 10086, Manifest.permission.READ_PHONE_STATE);
-        }
         AlibcTradeSDK.asyncInit(this.cordova.getActivity().getApplication() ,new AlibcTradeInitCallback(){
             @Override
             public void onSuccess(){
