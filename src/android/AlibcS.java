@@ -1,11 +1,5 @@
 package topo.alibcs;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-import android.webkit.WebSettings;
-
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeCallback;
@@ -30,13 +24,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
  * This class echoes a string called from JavaScript.
  */
 public class AlibcS extends CordovaPlugin {
-    //mm_131040549_43524337_344058314 24831514
     private  String pid = "";
     private String adzoneid = "";
     private String appKey = "";
@@ -74,17 +68,26 @@ public class AlibcS extends CordovaPlugin {
     }
     @Override
     public boolean execute(String action,JSONArray args, CallbackContext callbackContext) throws JSONException {
-        String type = args.getString(1);
-        if(type==TB){
+        JSONObject jsonObject = args.getJSONObject(1);
+        String type = jsonObject.getString("openType");
+        if(TB.equals(type)){
             alibcShowParams = new AlibcShowParams(OpenType.Native, false);
             alibcShowParams.setClientType("taobao_scheme");
-        }else if(type==TM){
+        }else if(TM.equals(type)){
             alibcShowParams = new AlibcShowParams(OpenType.Native, false);
             alibcShowParams.setClientType("tmall_scheme");
-        }else if(type==H5){
+        }else if(H5.equals(type)){
             alibcShowParams = new AlibcShowParams(OpenType.H5, false);
         }else{
             alibcShowParams = new AlibcShowParams(OpenType.Native, false);
+        }
+        Iterator<String> it = jsonObject.keys();
+        while (it.hasNext()){
+            String key = it.next();
+            if(!key.equals("openType")){
+                String value = jsonObject.getString(key);
+                exParams.put(key,value);
+            }
         }
         if (action.equals("detail")) {
             String message = args.getString(0);
@@ -109,16 +112,18 @@ public class AlibcS extends CordovaPlugin {
                 @Override
                 public void onTradeSuccess(AlibcTradeResult alibcTradeResult) {
                     System.out.print(alibcTradeResult.toString());
+                    callbackContext.success(alibcTradeResult.toString());
                 }
 
                 @Override
                 public void onFailure(int i, String s) {
                     System.out.print(s);
+                    callbackContext.error(s);
                 }
             });
 
         }else {
-            callbackContext.error("error");
+            callbackContext.error("商品id错误");
         }
     }
 
@@ -129,13 +134,17 @@ public class AlibcS extends CordovaPlugin {
                 @Override
                 public void onTradeSuccess(AlibcTradeResult alibcTradeResult) {
                     System.out.printf(alibcTradeResult.toString());
+                    callbackContext.success(alibcTradeResult.toString());
                 }
 
                 @Override
                 public void onFailure(int code, String msg){
                     System.out.printf(msg);
+                    callbackContext.error(msg);
                 }
             });
+        }else{
+            callbackContext.error("url错误");
         }
     }
 
@@ -155,7 +164,7 @@ public class AlibcS extends CordovaPlugin {
             });
 
         }else {
-            callbackContext.error("error");
+            callbackContext.error("店铺id错误");
         }
     }
 

@@ -1,14 +1,19 @@
+cordova.define("cordova-plugin-alibcs.AlibcS", function(require, exports, module) {
 var exec = require('cordova/exec')
-var alibcs = function () {}
+var alibcS = function () {}
 
-alibcs.prototype.showDetail = function (arg, success, error, openType = "taobao") {
-    exec(success, error, "AlibcS", "detail", [arg,openType])
+alibcS.prototype.showDetail = function (arg, success, error, options) {
+    var obj = Object.assign({openType:"taobao"},options)
+    exec(success, error, "AlibcS", "detail", [arg,obj])
 }
-alibcs.prototype.showPage = function (arg, success, error, openType = "taobao") {
-    exec(success, error, "AlibcS", "page", [arg, openType])
+alibcS.prototype.showPage = function (arg, success, error, options) {
+    var obj = Object.assign({ openType: "taobao" }, options)
+    exec(success, error, "AlibcS", "page", [arg, obj])
 }
-alibcs.prototype.showShop = function (arg, success, error, openType = "taobao") {
-    exec(success, error, "AlibcS", "shop", [arg, openType])
+alibcS.prototype.showShop = function (arg, success, error, options) {
+    var obj = Object.assign({ openType: "taobao" }, options)
+    exec(success, error, "AlibcS", "shop", [arg, obj])
 }
-var bc = new alibcs()
-module.exports = bc
+module.exports = new alibcS()
+
+});

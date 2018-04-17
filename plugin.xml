@@ -22,20 +22,6 @@
         <source-file src="src/android/AlibcS.java" target-dir="src/topo/alibcs" />
         <framework src="src/android/AlibcS.gradle" custom="true" type="gradleReference"/>
         <resource-file src="src/android/drawable/yw_1222.jpg" target="res/drawable/yw_1222.jpg"/>
-        <resource-file src="src/android/libs/alibc_trade_biz-3.1.1.209.aar" target="libs/alibc_trade_biz-3.1.1.209.aar" />
-        <resource-file src="src/android/libs/alibc_trade_common-3.1.1.209.aar" target="libs/alibc_trade_common-3.1.1.209.aar" />
-        <resource-file src="src/android/libs/alibc_trade_sdk-3.1.1.209.aar" target="libs/alibc_trade_sdk-3.1.1.209.aar" />
-        <resource-file src="src/android/libs/alibabauth_core-1.4.3.jar" target="libs/alibabauth_core-1.4.3.jar" />
-        <resource-file src="src/android/libs/alibabauth_ext-1.4.3.jar" target="libs/alibabauth_ext-1.4.3.jar" />
-        <resource-file src="src/android/libs/alibabauth_ui-1.4.3.aar" target="libs/alibabauth_ui-1.4.3.aar" />
-        <resource-file src="src/android/libs/app-monitor-sdk-2.5.1.3_for_bc_proguard.jar" target="libs/app-monitor-sdk-2.5.1.3_for_bc_proguard.jar" />
-        <resource-file src="src/android/libs/mtopsdk_allinone_open-1.2.2.4.jar" target="libs/mtopsdk_allinone_open-1.2.2.4.jar" />
-        <resource-file src="src/android/libs/securityguardaar3-5.1.81.aar" target="libs/securityguardaar3-5.1.81.aar" />
-        <resource-file src="src/android/libs/utdid4all-1.1.5.3_proguard.jar" target="libs/utdid4all-1.1.5.3_proguard.jar" />
-        <resource-file src="src/android/libs/alibc_link_partner-1.1.0.6.aar" target="libs/alibc_link_partner-1.1.0.6.aar" />
-        <resource-file src="src/android/libs/tuniontradesdk-0.3.2.aar" target="libs/tuniontradesdk-0.3.2.aar" />
-        <resource-file src="src/android/libs/fastjson-1.2.9.jar" target="libs/fastjson-1.2.9.jar" />
-        <resource-file src="src/android/libs/securitybodyaar3-5.1.25.aar" target="libs/securitybodyaar3-5.1.25.aar" />
         <resource-file src="src/android/proguard-rules.pro" target="proguard-rules.pro"/>
     </platform>
 </plugin>
