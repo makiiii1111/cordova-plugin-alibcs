@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-alibcs" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>AlibcS</name>
-    <preference name="PID"/>
-    <preference name="APPKEY"/>
+    <preference name="PID" default="mm_131040549_43524337_344058314"/>
+    <preference name="APPKEY" default="24831514"/>
     <js-module name="AlibcS" src="www/AlibcS.js">
         <clobbers target="alibcS" />
     </js-module>

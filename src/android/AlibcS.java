@@ -112,13 +112,11 @@ public class AlibcS extends CordovaPlugin {
                 @Override
                 public void onTradeSuccess(AlibcTradeResult alibcTradeResult) {
                     System.out.print(alibcTradeResult.toString());
-                    callbackContext.success(alibcTradeResult.toString());
                 }
 
                 @Override
                 public void onFailure(int i, String s) {
                     System.out.print(s);
-                    callbackContext.error(s);
                 }
             });
 
@@ -134,13 +132,11 @@ public class AlibcS extends CordovaPlugin {
                 @Override
                 public void onTradeSuccess(AlibcTradeResult alibcTradeResult) {
                     System.out.printf(alibcTradeResult.toString());
-                    callbackContext.success(alibcTradeResult.toString());
                 }
 
                 @Override
                 public void onFailure(int code, String msg){
                     System.out.printf(msg);
-                    callbackContext.error(msg);
                 }
             });
         }else{

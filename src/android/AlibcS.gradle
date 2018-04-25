@@ -17,8 +17,6 @@ dependencies {
     compile 'com.android.support:support-v4:23+'
     compile 'com.alibaba:fastjson:1.2.9'
 
-    compile 'com.alibaba.alipay:alipaySingle:20160825@jar'
-
     compile 'com.ali.auth.sdk:alibabauth_core:1.4.3@jar'
     compile 'com.ali.auth.sdk:alibabauth_ui:1.4.3@aar'
     compile 'com.ali.auth.sdk:alibabauth_ext:1.4.3@jar'
