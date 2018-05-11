@@ -24,4 +24,73 @@
         <resource-file src="src/android/drawable/yw_1222.jpg" target="res/drawable/yw_1222.jpg"/>
         <resource-file src="src/android/proguard-rules.pro" target="proguard-rules.pro"/>
     </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AlibcS">
+                <param name="ios-package" value="CDVAlibcS"/>
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="PID" value="$PID"/>
+            <preference name="APPKEY" value="$APPKEY"/>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>tbopen</string>
+                <string>tmall</string>
+            </array>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+            </dict>
+        </config-file>
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+                <dict>
+                    <key>CFBundleURLName</key>
+                    <string>alibc</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>tbopen24826612</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+         <!-- Plugin source code -->
+        <header-file src="src/ios/CDVAlibcS.h" />
+        <source-file src="src/ios/CDVAlibcS.m" />
+	
+        <framework src="src/ios/libs/AlibabaAuthExt.framework" custom="true" />
+        <framework src="src/ios/libs/AlibabaAuthSDK.framework" custom="true" />
+        <framework src="src/ios/libs/AlibcLinkPartnerSDK.framework" custom="true" />
+        <framework src="src/ios/libs/AlibcTradeBiz.framework" custom="true" />
+        <framework src="src/ios/libs/AlibcTradeCommon.framework" custom="true" />
+        <framework src="src/ios/libs/AlibcTradeSDK.framework" custom="true" />
+        <framework src="src/ios/libs/AlipaySDK.framework" custom="true" />
+        <framework src="src/ios/libs/OpenMtopExt.framework" custom="true" />
+        <framework src="src/ios/libs/OpenMtopSDK.framework" custom="true" />
+        <framework src="src/ios/libs/SecurityGuardSDK.framework" custom="true" />
+        <framework src="src/ios/libs/SGMain.framework" custom="true" />
+        <framework src="src/ios/libs/SGSecurityBody.framework" custom="true" />
+        <framework src="src/ios/libs/TUnionTradeSDK.framework" custom="true" />
+        <!-- <framework src="src/ios/libs/UTDID.framework" custom="true" /> -->
+        <framework src="src/ios/libs/UTMini.framework" custom="true" />
+        <!-- <resource-file src="src/ios/libs/AlipaySDK.bundle" /> -->
+        <resource-file src="src/ios/libs/AlibabaAuthSDK.bundle" />
+        <resource-file src="src/ios/libs/NBResource.bundle" />
+        <resource-file src="src/ios/libs/ALPLinkPartnerSDK.bundle" />
+        <resource-file src="src/ios/libs/yw_1222.jpg" />
+        <framework src="libz.tbd" />
+        <framework src="libsqlite3.0.tbd" />
+        <framework src="libc++.tbd" />
+        <framework src="CoreMotion.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="libstdc++.6.tbd" />
+    </platform>
 </plugin>
